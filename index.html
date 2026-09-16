@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E.M. EduConsult — professional educational consultancy and housing services.">
+  <title>E.M. EduConsult | Education & Housing</title>
+  <style>
+    :root{
+      --navy:#0b1736; --gold:#c9a44b; --cream:#f8f5ee; --white:#fff;
+      --text:#172033; --muted:#687086; --line:#e8e4db;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,23,54,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:Georgia,serif;color:#fff;font-size:1.35rem;font-weight:700;letter-spacing:.3px}
+    .logo span{color:var(--gold)}
+    .navlinks{display:flex;gap:28px;align-items:center;color:#eef1f8;font-size:.95rem}
+    .navlinks a:hover{color:var(--gold)}
+    .nav-cta{background:var(--gold);color:var(--navy)!important;padding:10px 17px;border-radius:7px;font-weight:700}
+    .menu{display:none;color:#fff;font-size:1.6rem;cursor:pointer}
+    .hero{background:linear-gradient(120deg,#07122e 0%,#0e2149 58%,#172d57 100%);color:#fff;min-height:650px;display:flex;align-items:center;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(201,164,75,.25);border-radius:50%;right:-100px;top:-100px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:2}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:800;margin-bottom:16px}
+    h1{font-family:Georgia,serif;font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.04;margin-bottom:22px;font-weight:700}
+    .hero p{font-size:1.08rem;color:#dce2ef;max-width:640px;margin-bottom:30px}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:7px;font-weight:700;border:1px solid transparent}
+    .btn-primary{background:var(--gold);color:var(--navy)}
+    .btn-outline{border-color:#8793ab;color:#fff}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.2)}
+    .hero-card .card-top{color:var(--gold);font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:.75rem}
+    .hero-card h2{font-family:Georgia,serif;font-size:2rem;margin:12px 0}
+    .hero-card p{font-size:.95rem;margin:0 0 20px}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .quick div{border:1px solid rgba(255,255,255,.13);padding:13px;border-radius:8px;color:#e9edf5;font-size:.88rem}
+    section{padding:92px 0}
+    .section-head{max-width:680px;margin-bottom:42px}
+    .section-head h2{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3rem);color:var(--navy);line-height:1.15;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+    .services{background:var(--cream)}
+    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .service{background:#fff;padding:30px;border:1px solid var(--line);border-radius:14px;transition:.25s}
+    .service:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(11,23,54,.08)}
+    .icon{width:48px;height:48px;border-radius:10px;background:#f3ead3;color:var(--navy);display:grid;place-items:center;font-size:1.35rem;margin-bottom:18px}
+    .service h3{font-family:Georgia,serif;font-size:1.35rem;margin-bottom:8px;color:var(--navy)}
+    .service p{color:var(--muted);font-size:.94rem}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .about-box{background:var(--navy);color:#fff;padding:42px;border-radius:18px}
+    .about-box .big{font-family:Georgia,serif;font-size:3rem;color:var(--gold);font-weight:700}
+    .about-copy h2{font-family:Georgia,serif;font-size:2.6rem;color:var(--navy);margin-bottom:16px}
+    .about-copy p{color:var(--muted);margin-bottom:18px}
+    .checks{display:grid;gap:12px;margin-top:24px}
+    .checks div{display:flex;gap:10px;align-items:flex-start}
+    .checks b{color:var(--gold)}
+    .process{background:#f8f9fb}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .step{padding:28px;background:#fff;border-radius:14px;border:1px solid #e9edf3}
+    .num{font-family:Georgia,serif;color:var(--gold);font-size:2rem;font-weight:700}
+    .step h3{color:var(--navy);margin:8px 0}
+    .step p{color:var(--muted);font-size:.93rem}
+    .contact{background:var(--navy);color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+    .contact h2{font-family:Georgia,serif;font-size:2.8rem;margin-bottom:15px}
+    .contact p{color:#cbd4e5;margin-bottom:24px}
+    .contact-info{display:grid;gap:12px}
+    .contact-item{padding:16px 18px;border:1px solid rgba(255,255,255,.13);border-radius:9px}
+    .contact-item small{display:block;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:1px}
+    .contact-item a:hover{color:var(--gold)}
+    .form{background:#fff;padding:28px;border-radius:14px;color:var(--text)}
+    .form h3{font-family:Georgia,serif;color:var(--navy);font-size:1.5rem;margin-bottom:15px}
+    input,textarea,select{width:100%;padding:13px;border:1px solid #dfe3ea;border-radius:7px;margin-bottom:12px;font:inherit}
+    textarea{min-height:110px;resize:vertical}
+    footer{background:#070f25;color:#aeb8cb;padding:25px 0;font-size:.88rem}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .gold{color:var(--gold)}
+    @media(max-width:800px){
+      .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);padding:18px 4%;flex-direction:column;align-items:flex-start}
+      .navlinks.open{display:flex}.menu{display:block}
+      .hero{min-height:auto;padding:90px 0}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
+      .service-grid,.process-grid{grid-template-columns:1fr}
+      section{padding:70px 0}.about-box{padding:30px}
+      .footer-row{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">E.M. <span>EduConsult</span></a>
+      <div class="menu" onclick="toggleMenu()">☰</div>
+      <div class="navlinks" id="navlinks">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a>
+        <a href="#process">How It Works</a><a href="#contact" class="nav-cta">Contact Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Education • Housing • Student Support</div>
+      <h1>Helping You Move Forward With Confidence.</h1>
+      <p>E.M. EduConsult provides professional educational consultancy and housing support, helping students and clients make informed decisions and access the services they need with ease.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#services">Explore Our Services</a>
+        <a class="btn btn-outline" href="https://wa.me/2348039752985" target="_blank">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="card-top">E.M. EduConsult</div>
+      <h2>Professional. Reliable. Student-Focused.</h2>
+      <p>From educational guidance to accommodation solutions, we are here to make your next move simpler.</p>
+      <div class="quick">
+        <div>🎓 Educational Consultancy</div>
+        <div>🏠 Housing Solutions</div>
+        <div>📋 Student Services</div>
+        <div>🤝 Personal Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Services Designed Around Your Needs</h2>
+      <p>Professional support for students, aspirants and clients looking for dependable educational and housing solutions.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service"><div class="icon">🎓</div><h3>Educational Consultancy</h3><p>Guidance and support for students and aspirants navigating admissions, school processes and academic decisions.</p></article>
+      <article class="service"><div class="icon">📝</div><h3>JAMB & Admission Services</h3><p>Support with selected JAMB, admission and related student documentation processes.</p></article>
+      <article class="service"><div class="icon">🏠</div><h3>Housing & Accommodation</h3><p>Helping students and clients find suitable accommodation and property options around their needs and budget.</p></article>
+      <article class="service"><div class="icon">🚚</div><h3>Student Support Services</h3><p>Practical services that make the student journey more convenient, including selected logistics and support solutions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-box">
+      <div class="big">E.M.</div>
+      <h2>More Than a Service — A Trusted Guide.</h2>
+      <p>We aim to provide a professional experience from the first enquiry to the completion of your service.</p>
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow">About E.M. EduConsult</div>
+      <h2>Professional guidance. Practical solutions.</h2>
+      <p>E.M. EduConsult is a growing service brand focused on educational consultancy and housing solutions. Our goal is to make important student and housing decisions easier through clear communication, convenient processes and dependable support.</p>
+      <div class="checks">
+        <div><b>✓</b><span>Clear and straightforward communication</span></div>
+        <div><b>✓</b><span>Student-focused support</span></div>
+        <div><b>✓</b><span>Professional approach to every enquiry</span></div>
+        <div><b>✓</b><span>Convenient access to our services</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Simple Process</div>
+      <h2>Getting Started Is Easy</h2>
+      <p>Tell us what you need and we'll guide you through the next steps.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step"><div class="num">01</div><h3>Tell Us What You Need</h3><p>Reach out through WhatsApp, phone or our contact form and explain the service you need.</p></div>
+      <div class="step"><div class="num">02</div><h3>Get Guidance</h3><p>We'll discuss your request, explain the process and provide the relevant information.</p></div>
+      <div class="step"><div class="num">03</div><h3>Get Started</h3><p>Once everything is clear, we'll guide you through the next steps for your chosen service.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow">Let's Talk</div>
+      <h2>Ready to make your next move?</h2>
+      <p>Have a question about education, admission or housing? Contact E.M. EduConsult and let's discuss how we can help.</p>
+      <div class="contact-info">
+        <div class="contact-item"><small>Call / WhatsApp</small><a href="tel:+2348039752985">0803 975 2985</a> &nbsp;·&nbsp; <a href="tel:+2347051889448">0705 188 9448</a></div>
+        <div class="contact-item"><small>Email</small><a href="mailto:emeduconsult@gmail.com">emeduconsult@gmail.com</a></div>
+        <div class="contact-item"><small>Social</small>Facebook & TikTok — E.M. EduConsult</div>
+      </div>
+    </div>
+    <form class="form" onsubmit="sendWhatsApp(event)">
+      <h3>Send an Enquiry</h3>
+      <input id="name" placeholder="Your name" required>
+      <input id="phone" placeholder="Phone number" required>
+      <select id="service" required>
+        <option value="">Select a service</option>
+        <option>Educational Consultancy</option>
+        <option>JAMB & Admission Services</option>
+        <option>Housing & Accommodation</option>
+        <option>Student Support Services</option>
+        <option>Other</option>
+      </select>
+      <textarea id="message" placeholder="Tell us briefly what you need..." required></textarea>
+      <button class="btn btn-primary" type="submit" style="width:100%;cursor:pointer">Send via WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© 2026 <span class="gold">E.M. EduConsult</span>. All rights reserved.</div>
+    <div>Education & Housing Solutions</div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('navlinks').classList.toggle('open')}
+function sendWhatsApp(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const service=document.getElementById('service').value;
+  const message=document.getElementById('message').value;
+  const text=`Hello E.M. EduConsult,%0A%0AMy name is ${encodeURIComponent(name)}.%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0A%0A${encodeURIComponent(message)}`;
+  window.open(`https://wa.me/2348039752985?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
